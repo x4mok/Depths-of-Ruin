@@ -1,0 +1,6 @@
+{
+    "parent": "item/handheld",
+    "textures": {
+        "layer0": "depths_of_ruin:item/dragon_pickaxe"
+    }
+}

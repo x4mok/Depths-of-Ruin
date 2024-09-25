@@ -1,6 +1,17 @@
 {
+  "itemGroup.depths_of_ruin_tab": "Depths of Ruin",
+
   "item.depths_of_ruin.dragon_blood": "Dragon's blood",
   "item.depths_of_ruin.dragon_scale": "Dragon's scale",
+  "item.depths_of_ruin.dragon_helmet": "Dragon's Helmet",
+  "item.depths_of_ruin.dragon_chestplate": "Dragon's Chestplate",
+  "item.depths_of_ruin.dragon_leggings": "Dragon's Leggings",
+  "item.depths_of_ruin.dragon_boots": "Dragon's Boots",
+  "item.depths_of_ruin.dragon_sword": "Dragon's Sword",
+  "item.depths_of_ruin.dragon_axe": "Dragon's Axe",
+  "item.depths_of_ruin.dragon_pickaxe": "Dragon's Pickaxe",
+  "item.depths_of_ruin.dragon_shovel": "Dragon's Shovel",
+  "item.depths_of_ruin.dragon_hoe": "Dragon's Hoe",
 
   "block.depths_of_ruin.magic_endstone": "Magical end stone"
 }
