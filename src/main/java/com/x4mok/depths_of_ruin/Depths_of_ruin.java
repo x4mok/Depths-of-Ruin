@@ -1,9 +1,12 @@
 package com.x4mok.depths_of_ruin;
 
+import com.x4mok.depths_of_ruin.block.ModBlocks;
+import com.x4mok.depths_of_ruin.item.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.common.Mod;
@@ -23,17 +26,23 @@ import java.util.stream.Collectors;
 public class Depths_of_ruin {
 
     // Directly reference a log4j logger.
-    private static final Logger LOGGER = LogManager.getLogger();
+    private static final Logger getLogger = LogManager.getLogger();
+    public static final String MODID = "depths_of_ruin";
 
     public Depths_of_ruin() {
-        // Register the setup method for modloading
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
+
+        IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        ModItems.register(eventBus);
+        ModBlocks.register(eventBus);
+
+
+        eventBus.addListener(this::setup);
         // Register the enqueueIMC method for modloading
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::enqueueIMC);
+        eventBus.addListener(this::enqueueIMC);
         // Register the processIMC method for modloading
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::processIMC);
+        eventBus.addListener(this::processIMC);
         // Register the doClientStuff method for modloading
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
+        eventBus.addListener(this::doClientStuff);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
@@ -41,33 +50,33 @@ public class Depths_of_ruin {
 
     private void setup(final FMLCommonSetupEvent event) {
         // some preinit code
-        LOGGER.info("HELLO FROM PREINIT");
-        LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
+        getLogger.info("HELLO FROM PREINIT");
+        getLogger.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
         // do something that can only be done on the client
-        LOGGER.info("Got game settings {}", event.getMinecraftSupplier().get().options);
+        getLogger.info("Got game settings {}", event.getMinecraftSupplier().get().options);
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event) {
         // some example code to dispatch IMC to another mod
         InterModComms.sendTo("depths_of_ruin", "helloworld", () -> {
-            LOGGER.info("Hello world from the MDK");
+            getLogger.info("Hello world from the MDK");
             return "Hello world";
         });
     }
 
     private void processIMC(final InterModProcessEvent event) {
         // some example code to receive and process InterModComms from other mods
-        LOGGER.info("Got IMC {}", event.getIMCStream().map(m -> m.getMessageSupplier().get()).collect(Collectors.toList()));
+        getLogger.info("Got IMC {}", event.getIMCStream().map(m -> m.getMessageSupplier().get()).collect(Collectors.toList()));
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
     public void onServerStarting(FMLServerStartingEvent event) {
         // do something when the server starts
-        LOGGER.info("HELLO from server starting");
+        getLogger.info("HELLO from server starting");
     }
 
     // You can use EventBusSubscriber to automatically subscribe events on the contained class (this is subscribing to the MOD
@@ -77,7 +86,7 @@ public class Depths_of_ruin {
         @SubscribeEvent
         public static void onBlocksRegistry(final RegistryEvent.Register<Block> blockRegistryEvent) {
             // register a new block here
-            LOGGER.info("HELLO from Register Block");
+            getLogger.info("HELLO from Register Block");
         }
     }
 }
