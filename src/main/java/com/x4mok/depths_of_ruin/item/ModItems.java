@@ -17,6 +17,8 @@ public class ModItems {
             () -> new Item(new Item.Properties().tab(ItemGroup.TAB_MATERIALS).stacksTo(64).rarity(Rarity.COMMON)));
     public static final RegistryObject<Item> DRAGON_SCALE = ITEMS.register("dragon_scale",
             () -> new Item(new Item.Properties().tab(ItemGroup.TAB_MATERIALS).stacksTo(64).rarity(Rarity.COMMON)));
+    public static final RegistryObject<Item> TRUE_DRAGON_SCALE = ITEMS.register("true_dragon_scale",
+            () -> new Item(new Item.Properties().tab(ItemGroup.TAB_MATERIALS).stacksTo(64).rarity(Rarity.UNCOMMON)));
     public static final RegistryObject<Item> DRAGON_SWORD = ITEMS.register("dragon_sword",
             () -> new SwordItem(ModItemTier.DRAGON, 3, -2.4F, (new Item.Properties().tab(ModItemGroup.DEPTHS_OF_RUIN_TAB).rarity(Rarity.COMMON))));
     public static final RegistryObject<Item> DRAGON_AXE = ITEMS.register("dragon_axe",
@@ -36,6 +38,7 @@ public class ModItems {
             () -> new ArmorItem(ModArmourMaterial.DRAGON, EquipmentSlotType.LEGS, (new Item.Properties().tab(ModItemGroup.DEPTHS_OF_RUIN_TAB).rarity(Rarity.COMMON))));
     public static final RegistryObject<Item> DRAGON_BOOTS = ITEMS.register("dragon_boots",
             () -> new ArmorItem(ModArmourMaterial.DRAGON, EquipmentSlotType.FEET, (new Item.Properties().tab(ModItemGroup.DEPTHS_OF_RUIN_TAB).rarity(Rarity.COMMON))));
+
 
 
     public static void register(IEventBus eventBus) {

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "minecraft:netherite_pickaxe"
+  },
+  "addition": {
+    "item": "depths_of_ruin:true_dragon_scale"
+  },
+  "result": {
+    "item": "depths_of_ruin:dragon_pickaxe"
+  }
+}

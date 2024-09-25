@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "depths_of_ruin:dragon_scale"
+    },
+    {
+      "item": "depths_of_ruin:dragon_scale"
+    },
+    {
+      "item": "depths_of_ruin:dragon_scale"
+    },
+    {
+      "item": "depths_of_ruin:dragon_scale"
+    },
+    {
+      "item": "depths_of_ruin:dragon_blood"
+    },
+    {
+      "item": "depths_of_ruin:dragon_blood"
+    },
+    {
+      "item": "depths_of_ruin:dragon_blood"
+    },
+    {
+      "item": "depths_of_ruin:dragon_blood"
+    }
+  ],
+  "result": {
+    "item": "depths_of_ruin:true_dragon_scale"
+  }
+}
