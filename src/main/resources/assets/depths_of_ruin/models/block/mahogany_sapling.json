@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "depths_of_ruin:block/mahogany_sapling"
+  }
+}

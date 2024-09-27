@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "depths_of_ruin:block/mahogany_leaves"
+  }
+}

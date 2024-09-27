@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "depths_of_ruin:mahogany_wood"
+    }
+  ],
+  "result": {
+    "item": "depths_of_ruin:mahogany_planks",
+    "amount": 4
+  }
+}

@@ -1,9 +1,15 @@
 package com.x4mok.depths_of_ruin;
 
+import com.google.common.collect.ImmutableMap;
 import com.x4mok.depths_of_ruin.block.ModBlocks;
+import com.x4mok.depths_of_ruin.event.DragonDeath;
 import com.x4mok.depths_of_ruin.item.ModItems;
+import com.x4mok.depths_of_ruin.world.biomes.ModBiomes;
+import com.x4mok.depths_of_ruin.world.gen.ModBiomeGeneration;
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.RenderTypeLookup;
+import net.minecraft.item.AxeItem;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -32,8 +38,12 @@ public class Depths_of_ruin {
     public Depths_of_ruin() {
 
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
         ModItems.register(eventBus);
         ModBlocks.register(eventBus);
+
+        ModBiomes.register(eventBus);
+
 
 
         eventBus.addListener(this::setup);
@@ -49,14 +59,21 @@ public class Depths_of_ruin {
     }
 
     private void setup(final FMLCommonSetupEvent event) {
-        // some preinit code
-        getLogger.info("HELLO FROM PREINIT");
-        getLogger.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
+        MinecraftForge.EVENT_BUS.register(DragonDeath.class);
+        event.enqueueWork(() -> {
+            AxeItem.STRIPABLES = new ImmutableMap.Builder<Block, Block>().putAll(AxeItem.STRIPABLES)
+                    .put(ModBlocks.MAHOGANY_LOG.get(), ModBlocks.STRIPPED_MAHOGANY_LOG.get())
+                    .put(ModBlocks.MAHOGANY_WOOD.get(), ModBlocks.STRIPPED_MAHOGANY_WOOD.get()).build();
+
+            ModBiomeGeneration.generateBiomes();
+        });
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
-        // do something that can only be done on the client
-        getLogger.info("Got game settings {}", event.getMinecraftSupplier().get().options);
+        event.enqueueWork(() -> {
+            RenderTypeLookup.setRenderLayer(ModBlocks.MAHOGANY_LEAVES.get(), RenderType.cutout());
+            RenderTypeLookup.setRenderLayer(ModBlocks.MAHOGANY_SAPLING.get(), RenderType.cutout());
+        });
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event) {
@@ -88,5 +105,6 @@ public class Depths_of_ruin {
             // register a new block here
             getLogger.info("HELLO from Register Block");
         }
+
     }
 }

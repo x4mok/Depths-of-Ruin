@@ -1,9 +1,9 @@
 {
   "itemGroup.depths_of_ruin_tab": "Depths of Ruin",
 
-  "item.depths_of_ruin.dragon_blood": "Dragon's blood",
-  "item.depths_of_ruin.dragon_scale": "Dragon's scale",
-  "item.depths_of_ruin.true_dragon_scale": "§4§lTrue §rDragon's scale",
+  "item.depths_of_ruin.dragon_blood": "Dragon's Blood",
+  "item.depths_of_ruin.dragon_scale": "Dragon's Scale",
+  "item.depths_of_ruin.true_dragon_scale": "§4§lTrue §rDragon's Scale",
   "item.depths_of_ruin.dragon_helmet": "Dragon's Helmet",
   "item.depths_of_ruin.dragon_chestplate": "Dragon's Chestplate",
   "item.depths_of_ruin.dragon_leggings": "Dragon's Leggings",
@@ -14,5 +14,15 @@
   "item.depths_of_ruin.dragon_shovel": "Dragon's Shovel",
   "item.depths_of_ruin.dragon_hoe": "Dragon's Hoe",
 
-  "block.depths_of_ruin.magic_endstone": "Magical end stone"
+  "block.depths_of_ruin.magic_endstone": "Magical End Stone",
+  "block.depths_of_ruin.mahogany_log": "Mahogany Log",
+  "block.depths_of_ruin.stripped_mahogany_log": "Stripped Mahogany Log",
+  "block.depths_of_ruin.mahogany_wood": "Mahogany Wood",
+  "block.depths_of_ruin.stripped_mahogany_wood": "Stripped Mahogany Wood",
+  "block.depths_of_ruin.mahogany_planks": "Mahogany Planks",
+  "block.depths_of_ruin.mahogany_sapling": "Mahogany Sapling",
+  "block.depths_of_ruin.mahogany_leaves": "Mahogany Leaves",
+
+  "biome.depths_of_ruin.mahogany_biome": "Mahogany Biome",
+  "biome.depths_of_ruin.mahogany_plateau": "Mahogany Plateau"
 }

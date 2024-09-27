@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "depths_of_ruin:stripped_mahogany_log"
+    },
+    {
+      "item": "depths_of_ruin:stripped_mahogany_log"
+    },
+    {
+      "item": "depths_of_ruin:stripped_mahogany_log"
+    },
+    {
+      "item": "depths_of_ruin:stripped_mahogany_log"
+    }
+  ],
+  "result": {
+    "item": "depths_of_ruin:stripped_mahogany_wood"
+  }
+}
