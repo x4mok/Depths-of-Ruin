@@ -1,6 +1,7 @@
 package com.x4mok.depths_of_ruin.block;
 
 import com.x4mok.depths_of_ruin.Depths_of_ruin;
+import com.x4mok.depths_of_ruin.block.custom.EndGrassBlock;
 import com.x4mok.depths_of_ruin.block.custom.trees.MahoganyTree;
 import com.x4mok.depths_of_ruin.item.ModItems;
 import net.minecraft.block.*;
@@ -40,6 +41,8 @@ public class ModBlocks {
             () -> new SaplingBlock(new MahoganyTree(),AbstractBlock.Properties.copy(Blocks.OAK_SAPLING)));
     public static final RegistryObject<Block> NULL = registerBlockWithRarity("null",
             () -> new Block(AbstractBlock.Properties.of(Material.STONE).harvestLevel(9).harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(50f)), Rarity.EPIC);
+    public static final RegistryObject<Block> END_GRASS = registerBlock("end_grass",
+            () -> new EndGrassBlock());
 
     private static  <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

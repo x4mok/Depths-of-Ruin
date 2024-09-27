@@ -1,6 +1,7 @@
 package com.x4mok.depths_of_ruin.world.biomes;
 
 import com.x4mok.depths_of_ruin.Depths_of_ruin;
+import com.x4mok.depths_of_ruin.block.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.ResourceLocation;
@@ -18,6 +19,12 @@ public class ModConfiguredSurfaceBuilders {
 					Blocks.OAK_LOG.defaultBlockState(), // TOP MATERIAL (E.G GRASS BLOCKS)
 					Blocks.OAK_LEAVES.defaultBlockState(), // UNDER TOP MATERIAL (E.G DIRT)
 					Blocks.TNT.defaultBlockState() // UNDER WATER MATERIAL (E.G STONE)
+			)));
+	public static ConfiguredSurfaceBuilder<?> DIVINE_QUARRY_SURFACE = register("divine_quarry_surface",
+			SurfaceBuilder.DEFAULT.configured(new SurfaceBuilderConfig(
+					ModBlocks.END_GRASS.get().defaultBlockState(), // TOP MATERIAL (E.G GRASS BLOCKS)
+					Blocks.END_STONE.defaultBlockState(), // UNDER TOP MATERIAL (E.G DIRT)
+					Blocks.END_STONE.defaultBlockState() // UNDER WATER MATERIAL (E.G STONE)
 			)));
 
 
