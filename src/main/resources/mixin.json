@@ -1,0 +1,10 @@
+{
+  "required": true,
+  "package": "com.x4mok.depths_of_ruin.mixin",
+  "refmap": "depths_of_ruin.refmap.json",
+  "target": "@env(DEFAULT)",
+  "mixins": [
+    "ModEndChunkGeneratorMixin"
+  ],
+  "minVersion": "0.8"
+}

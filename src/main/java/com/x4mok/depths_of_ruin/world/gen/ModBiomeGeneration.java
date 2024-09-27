@@ -17,8 +17,7 @@ public class ModBiomeGeneration {
 		addOverworldBiome(ModBiomes.MAHOGANY_BIOME.get(), BiomeManager.BiomeType.WARM, 20, BiomeDictionary.Type.HOT, BiomeDictionary.Type.DRY, BiomeDictionary.Type.PLAINS);
 		addOverworldBiome(ModBiomes.MAHOGANY_PLATEAU.get(), BiomeManager.BiomeType.WARM, 20, BiomeDictionary.Type.HOT, BiomeDictionary.Type.DRY, BiomeDictionary.Type.PLATEAU);
 
-		// End Biome
-		addEndBiome(ModBiomes.DIVINE_QUARRY.get(), BiomeManager.BiomeType.COOL, 20, BiomeDictionary.Type.DEAD, BiomeDictionary.Type.WET);
+
 	}
 
 	// Method for adding Overworld biomes (unchanged)
@@ -32,12 +31,6 @@ public class ModBiomeGeneration {
 
 	// New method for adding End biomes
 	private static void addEndBiome(Biome biome, BiomeManager.BiomeType type, int weight, BiomeDictionary.Type... types) {
-		RegistryKey<Biome> key = RegistryKey.create(ForgeRegistries.Keys.BIOMES,
-				Objects.requireNonNull(ForgeRegistries.BIOMES.getKey(biome)));
 
-		// Add biome to the End biome dictionary
-		BiomeDictionary.addTypes(key, types);
-		BiomeManager.addBiome(type, new BiomeManager.BiomeEntry(key, 20));
-		// No need to add biome manager entries here for End biomes specifically
 	}
 }

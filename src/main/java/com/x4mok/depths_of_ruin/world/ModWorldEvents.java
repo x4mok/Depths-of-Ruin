@@ -6,7 +6,9 @@ import com.x4mok.depths_of_ruin.world.biomes.ModBiomes;
 import net.minecraft.util.RegistryKey;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.provider.EndBiomeProvider;
 import net.minecraftforge.common.BiomeDictionary;
+import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -32,6 +34,10 @@ public class ModWorldEvents {
 			// Use ResourceLocation to reference the custom Divine Quarry biome
 			RegistryKey<Biome> divineQuarryKey = RegistryKey.create(ForgeRegistries.Keys.BIOMES,
 					new ResourceLocation("depths_of_ruin", "divine_quarry"));
+
+			BiomeManager.addBiome(BiomeManager.BiomeType.COOL,
+					new BiomeManager.BiomeEntry(divineQuarryKey, 20));
+
 		}
 	}
 }
