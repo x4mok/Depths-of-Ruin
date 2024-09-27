@@ -8,6 +8,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.item.Rarity;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.RegistryObject;
@@ -37,6 +38,8 @@ public class ModBlocks {
             () -> new LeavesBlock(AbstractBlock.Properties.of(Material.LEAVES).harvestTool(ToolType.HOE).strength(0.2f).randomTicks().sound(SoundType.GRASS).noOcclusion()));
     public static final RegistryObject<Block> MAHOGANY_SAPLING = registerBlock("mahogany_sapling",
             () -> new SaplingBlock(new MahoganyTree(),AbstractBlock.Properties.copy(Blocks.OAK_SAPLING)));
+    public static final RegistryObject<Block> NULL = registerBlockWithRarity("null",
+            () -> new Block(AbstractBlock.Properties.of(Material.STONE).harvestLevel(9).harvestTool(ToolType.PICKAXE).requiresCorrectToolForDrops().strength(50f)), Rarity.EPIC);
 
     private static  <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
@@ -46,9 +49,22 @@ public class ModBlocks {
         return toReturn;
     }
 
+    private static <T extends Block> RegistryObject<T> registerBlockWithRarity(String name, Supplier<T> block, Rarity rarity) {
+        RegistryObject<T> toReturn = BLOCKS.register(name, block);
+
+        registerBlockItemWithRarity(name, toReturn, rarity);
+
+        return toReturn;
+    }
+
+    private static <T extends  Block> void registerBlockItemWithRarity(String name, RegistryObject<T> block, Rarity rarity) {
+        ModItems.ITEMS.register(name, () -> new BlockItem(block.get(),
+                new Item.Properties().rarity(rarity)));
+    }
+
     private static <T extends  Block> void registerBlockItem(String name, RegistryObject<T> block) {
         ModItems.ITEMS.register(name, () -> new BlockItem(block.get(),
-                new Item.Properties().tab(ItemGroup.TAB_MATERIALS)));
+                new Item.Properties()));
     }
 
     public static void register(IEventBus eventBus) {

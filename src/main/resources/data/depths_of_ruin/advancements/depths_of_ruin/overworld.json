@@ -1,0 +1,39 @@
+{
+  "parent": "depths_of_ruin:depths_of_ruin/root",
+  "display": {
+    "icon": {
+      "item": "minecraft:grass_block"
+    },
+    "title": {
+      "translate": "advancements.depths_of_ruin.overworld.title"
+    },
+    "description": {
+      "translate": "advancements.depths_of_ruin.overworld.description"
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "killed_dragon": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "predicate": {
+              "type": "minecraft:ender_dragon"
+            },
+            "entity": "this"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "killed_dragon"
+    ]
+  ]
+}

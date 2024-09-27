@@ -22,6 +22,18 @@
   "block.depths_of_ruin.mahogany_planks": "Mahogany Planks",
   "block.depths_of_ruin.mahogany_sapling": "Mahogany Sapling",
   "block.depths_of_ruin.mahogany_leaves": "Mahogany Leaves",
+  "block.depths_of_ruin.null": "Null..?",
+
+  "advancements.depths_of_ruin.root.title": "Depths of Ruin!",
+  "advancements.depths_of_ruin.root.description": "The adventure begins!",
+  "advancements.depths_of_ruin.overworld.title": "The Overworld",
+  "advancements.depths_of_ruin.overworld.description": "§4How did it split?",
+  "advancements.depths_of_ruin.fragmented_worlds.title": "Fragmented Dimensions",
+  "advancements.depths_of_ruin.fragmented_worlds.description": "§4And what caused it...",
+  "advancements.depths_of_ruin.obtain_dragon_drops.title": "The Dragon's parts!",
+  "advancements.depths_of_ruin.obtain_dragon_drops.description": "§4I could use these...",
+  "advancements.depths_of_ruin.dragonarmour.title": "Armour of the ancients",
+  "advancements.depths_of_ruin.dragonarmour.description": "§4What have you done...",
 
   "biome.depths_of_ruin.mahogany_biome": "Mahogany Biome",
   "biome.depths_of_ruin.mahogany_plateau": "Mahogany Plateau"

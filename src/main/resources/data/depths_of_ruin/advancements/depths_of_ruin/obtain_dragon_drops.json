@@ -1,0 +1,35 @@
+{
+  "parent": "depths_of_ruin:depths_of_ruin/overworld",
+  "display": {
+    "icon": {
+      "item": "depths_of_ruin:dragon_scale"
+    },
+    "title": {
+      "translate": "advancements.depths_of_ruin.obtain_dragon_drops.title"
+    },
+    "description": {
+      "translate": "advancements.depths_of_ruin.obtain_dragon_drops.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "dragon_scale": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "depths_of_ruin:dragon_scale"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "dragon_scale"
+    ]
+  ]
+}
