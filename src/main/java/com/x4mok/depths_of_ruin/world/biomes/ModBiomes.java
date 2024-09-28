@@ -5,9 +5,11 @@ import com.x4mok.depths_of_ruin.world.gen.ModConfiguredFeatures;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.Dimension;
 import net.minecraft.world.biome.*;
 import net.minecraft.world.gen.GenerationStage;
 import net.minecraft.world.gen.feature.structure.StructureFeatures;
+import net.minecraft.world.gen.settings.DimensionGeneratorSettings;
 import net.minecraft.world.gen.surfacebuilders.ConfiguredSurfaceBuilder;
 import net.minecraft.world.gen.surfacebuilders.ConfiguredSurfaceBuilders;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -27,6 +29,7 @@ public class ModBiomes {
 			ModBiomes::mahoganyPlateauBiome);
 	public static final RegistryObject<Biome> DIVINE_QUARRY = BIOMES.register("divine_quarry",
 			ModBiomes::divineQuarryBiome);
+
 
 
 
